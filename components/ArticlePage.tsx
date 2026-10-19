@@ -14,7 +14,7 @@ export function pageMetadata(data: PageData): Metadata {
     title: { absolute: data.meta.title },
     description: data.meta.description,
     alternates: { canonical: data.path },
-    openGraph: { title: data.meta.title, description: data.meta.description, url: data.path, siteName: siteData.name, type: "article", locale: "en_GB" },
+    openGraph: { title: data.meta.title, description: data.meta.description, url: data.path, siteName: siteData.name, type: "article", locale: "en_GB", images: "/opengraph-image" },
   };
 }
 
