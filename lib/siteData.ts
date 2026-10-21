@@ -2,7 +2,7 @@
 
 export const siteData = {
   name: "BudCompare",
-  url: "https://www.budcompare.co.uk",
+  url: "https://www.budcompare.com",
   tagline: "Compare UK medical cannabis clinics, consultation fees, ongoing costs and access.",
   headerCta: { label: "Check eligibility", href: "/eligibility-checker/" },
 
