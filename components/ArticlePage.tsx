@@ -37,7 +37,9 @@ export default function ArticlePage({ data, clinicId, wide = false }: { data: Pa
       headline: data.hero.title,
       description: data.meta.description,
       ...(data.category === "review" ? { itemReviewed: { "@type": "MedicalClinic", name: data.navLabel.replace(/ review$/i, "") } } : {}),
-      publisher: { "@type": "Organization", name: siteData.name },
+      // Written by the BudCompare editorial team; Google's Review snippets require an author.
+      author: { "@type": "Organization", name: siteData.name, url: siteData.url },
+      publisher: { "@type": "Organization", name: siteData.name, url: siteData.url },
     },
   ];
   if (faqs.length)
