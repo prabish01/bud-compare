@@ -6,7 +6,7 @@ import JsonLd from "@/components/JsonLd";
 import { clinicsData, getClinic } from "@/lib/clinicsData";
 import { cheapestPlan, eligiblePlans, formatGBP, planCosts } from "@/lib/costCalculator";
 import { homeData as h } from "@/lib/homeData";
-import { siteData } from "@/lib/siteData";
+import { developerPerson, siteData } from "@/lib/siteData";
 
 export const metadata: Metadata = {
   title: { absolute: h.meta.title },
@@ -44,7 +44,14 @@ export default function Home() {
   return (
     <>
       <JsonLd
-        data={{ "@context": "https://schema.org", "@type": "WebSite", name: siteData.name, url: siteData.url, description: h.meta.description }}
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: siteData.name,
+          url: siteData.url,
+          description: h.meta.description,
+          creator: developerPerson,
+        }}
       />
 
       {/* Hero: split, copy left, live estimate right */}

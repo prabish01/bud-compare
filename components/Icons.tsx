@@ -8,8 +8,11 @@ import {
   CaretDown,
   Check,
   CurrencyGbp,
+  EnvelopeSimple,
+  GithubLogo,
   Info,
   Leaf,
+  LinkedinLogo,
   List,
   Path,
   Question,
@@ -44,6 +47,9 @@ export const IconLeaf = make(Leaf, "regular", "h-5 w-5");
 export const IconTruck = make(Truck);
 export const IconBook = make(BookOpen, "regular", "h-5 w-5");
 export const IconQuestion = make(Question, "regular", "h-5 w-5");
+export const IconLinkedin = make(LinkedinLogo);
+export const IconGithub = make(GithubLogo);
+export const IconEmail = make(EnvelopeSimple);
 
 export const serviceIcons = {
   compare: IconCompare,

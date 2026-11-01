@@ -1,9 +1,16 @@
 import Link from "next/link";
 import { siteData } from "@/lib/siteData";
-import { IconArrow } from "./Icons";
+import { IconArrow, IconEmail, IconGithub, IconLinkedin } from "./Icons";
 import Logo from "./Logo";
 
 export default function Footer() {
+  const dev = siteData.developer;
+  const devLinks = [
+    { href: dev.linkedin, label: `${dev.name} on LinkedIn`, Icon: IconLinkedin, external: true },
+    { href: dev.github, label: `${dev.name} on GitHub`, Icon: IconGithub, external: true },
+    { href: `mailto:${dev.email}`, label: `Email ${dev.name}`, Icon: IconEmail, external: false },
+  ];
+
   return (
     <footer className="px-2 pb-2 pt-16 sm:px-3 sm:pb-3">
       <div className="overflow-hidden rounded-3xl bg-brand-950 text-white">
@@ -47,6 +54,33 @@ export default function Footer() {
         <div className="mx-6 border-t border-white/10 py-6 sm:mx-10">
           <p className="text-xs leading-relaxed text-white/50">{siteData.disclaimer}</p>
           <p className="mt-4 text-xs text-white/40">{siteData.copyright}</p>
+          <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-white/40">
+            <p>
+              {dev.creditLabel}{" "}
+              <a
+                href={dev.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 transition hover:text-lime"
+              >
+                {dev.name}
+              </a>
+            </p>
+            <ul className="flex items-center gap-2.5">
+              {devLinks.map(({ href, label, Icon, external }) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    aria-label={label}
+                    {...(external && { target: "_blank", rel: "noopener noreferrer" })}
+                    className="block text-white/50 transition hover:text-lime"
+                  >
+                    <Icon className="h-3.5 w-3.5" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
         </div>
       </div>

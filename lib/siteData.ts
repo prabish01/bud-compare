@@ -96,6 +96,31 @@ export const siteData = {
   disclaimer:
     "This comparison tool compares publicly available clinic pricing and services. It does not provide medical advice or determine whether medical cannabis is suitable for you. Prescription decisions must be made by an appropriately qualified healthcare professional. Medication costs are not included unless explicitly stated.",
   copyright: "© 2026 BudCompare. All rights reserved.",
+
+  // Developer credit: shown in the footer and used for the JSON-LD creator and
+  // <meta name="author">. Edit these details here only.
+  developer: {
+    name: "Prabish Dangi",
+    email: "prabishdc2002@gmail.com",
+    github: "https://github.com/prabish01",
+    linkedin: "https://www.linkedin.com/in/prabish-dangi-04a649211/",
+    // Same @id on every site I build so search engines merge them into one person.
+    id: "https://github.com/prabish01#person",
+    // Other sites I've built; listed in sameAs to link them together.
+    otherSites: ["https://www.nepalmedinfo.com"],
+    creditLabel: "Designed & Developed by",
+  },
+};
+
+// schema.org Person for the developer (WebSite JSON-LD "creator").
+const dev = siteData.developer;
+export const developerPerson = {
+  "@type": "Person",
+  "@id": dev.id,
+  name: dev.name,
+  url: dev.linkedin,
+  email: dev.email,
+  sameAs: [dev.linkedin, dev.github, ...dev.otherSites],
 };
 
 export type NavItem = { label: string; href?: string; children?: { label: string; href: string }[] };

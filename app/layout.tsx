@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteData.url),
   title: { default: siteData.name, template: `%s | ${siteData.name}` },
   description: siteData.tagline,
+  authors: [{ name: siteData.developer.name, url: siteData.developer.linkedin }],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
